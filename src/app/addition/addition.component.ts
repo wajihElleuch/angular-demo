@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./addition.component.scss']
 })
 export class AdditionComponent implements OnInit {
-  firstNumber: number = 0;
+  firstNumber1: number = 0;
   secondNumber: number = 0;
   result = 0;
   operateur = '+';
@@ -18,25 +18,25 @@ export class AdditionComponent implements OnInit {
   }
 
   onClick() {
-    this.result = (+this.firstNumber) + (+this.secondNumber);
+    this.result = (+this.firstNumber1) + (+this.secondNumber);
     switch (this.operateur) {
       case '+':
-        this.result = (+this.firstNumber) + (+this.secondNumber);
+        this.result = (+this.firstNumber1) + (+this.secondNumber);
         break;
       case '-':
-        this.result = (+this.firstNumber) - (+this.secondNumber);
+        this.result = (+this.firstNumber1) - (+this.secondNumber);
         break;
       case '*':
-        this.result = (+this.firstNumber) * (+this.secondNumber);
+        this.result = (+this.firstNumber1) * (+this.secondNumber);
         break;
       case '/':
-        this.result = (+this.firstNumber) / (+this.secondNumber);
+        this.result = (+this.firstNumber1) / (+this.secondNumber);
         break;
     }
   }
 
   onChangeFirstNumber($event: Event) {
-    this.firstNumber = $event.target.value;
+    this.firstNumber1 = $event.target.value;
     console.log($event.target.value);
   }
 
