@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ProductsServiceService} from './services/products-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,31 +7,17 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  nav = 'H';
   title = 'demo-angular';
   // cardTitle = 'what is angular';
   // cardSubtitle = 'Get a high-level overview of the Angular platform.';
   bgInfo = 'bg-info';
   cardAction = 'Local setup';
-  products = [
-    {
-      productId: 1,
-      productTitle: 'TV',
-      productSubtitle: 'full hd',
-      qte: 0
-    },
-    {
-      productId: 2,
-      productTitle: '8assela',
-      productSubtitle: 'automatik 9kg',
-      qte: 2
-    },
-    {
-      productId: 3,
-      productTitle: 'micro-onde',
-      productSubtitle: '300w blue ',
-      qte: 1
-    }
-  ];
+
+  products = this.productsServiceService.getProduct();
+
+  constructor(private productsServiceService: ProductsServiceService) {
+  }
 
   visibility(product: { productTitle: string; qte: number; productId: number; productSubtitle: string } | { productTitle: string; qte: number; productId: number; productSubtitle: string } | { productTitle: string; qte: number; productId: number; productSubtitle: string }) {
 
@@ -45,5 +32,29 @@ export class AppComponent {
 
   moreBgColor(qte: number) {
     return qte > 0 ? 'bg-danger' : 'bg-info';
+  }
+
+  deleteCard(product) {
+    if (product.qte === 0) {
+      const index = this.products.indexOf(product);
+      this.products.splice(index, 1);
+    } else {
+      product.qte--;
+    }
+
+
+  }
+
+  onDeletedCard($event: any) {
+    console.log('emited id ', $event);
+    const index = this.products.findIndex(product => product.productId === $event);
+    this.products.splice(index, 1);
+  }
+
+  onSearch($event: Event) {
+
+    this.products = this.productsServiceService.getProduct()
+      .filter(product => product.productTitle.toLocaleLowerCase().includes($event.target['value'].toLocaleLowerCase()));
+
   }
 }

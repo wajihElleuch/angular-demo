@@ -36,15 +36,15 @@ export class AdditionComponent implements OnInit {
   }
 
   onChangeFirstNumber($event: Event) {
-    this.firstNumber1 = $event.target.value;
-    console.log($event.target.value);
+    this.firstNumber1 = $event.target['value'];
+    console.log($event.target['value']);
   }
 
   onChangeSecondNumber($event: Event) {
-    this.secondNumber = $event.target.value;
+    this.secondNumber = $event.target['value'];
   }
 
   onChangeOperateur($event: Event) {
-    this.operateur = $event.target.value;
+    this.operateur = $event.target['value'];
   }
 }

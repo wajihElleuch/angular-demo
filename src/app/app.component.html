@@ -1,40 +1,52 @@
+<!--<div class="container">-->
+<!--  <div>-->
+<!--    <button class="btn " [class.btn-primary]="nav==='H'" (click)="nav='H'"> Home</button>-->
+<!--    <button class="btn" [class.btn-primary]="nav==='L'" (click)="nav='L'"> list</button>-->
+<!--    <button class="btn" [class.btn-primary]="nav==='Q'" (click)="nav='Q'"> qte</button>-->
+<!--  </div>-->
+<!--  <ng-container [ngSwitch]="nav">-->
+<!--    <div *ngSwitchCase="'H'"> welcome to home page</div>-->
+<!--    <ng-container *ngSwitchCase="'L'">-->
+<!--      <div *ngFor="let product of products">{{product.productTitle}} </div>-->
+<!--    </ng-container>-->
+<!--    <ng-container *ngSwitchCase="'Q'">-->
+<!--      <div *ngFor="let product of products">{{product.qte}} </div>-->
+<!--    </ng-container>-->
+<!--  </ng-container>-->
+<!--</div>-->
+<div>
+  <input type="text" placeholder="serach ..." (input)="onSearch($event)">
+</div>
+
 <div class="container">
-  hello word!!
-<div class="row">
-  <div class="col-6">
-    <ng-container *ngFor="let product of products">
-      <div class=" w-50 border">
-        <div class="p-4  text-center">
-          <h4>{{product.productTitle}}</h4>
-          <span> {{product.productSubtitle}}</span>
-        </div>
-        <div class="footer text-right p2 "
-
-             [ngClass]="product.qte>0?'bg-danger':'bg-info'"
-        >
-          more</div>
-      </div>
-      <!--    <div [ngStyle]="{'display':product.qte<=0?'none':'block'}" class=" w-50 border">-->
-      <!--      <div class="p-4  text-center">-->
-      <!--        <h4>{{product.productTitle}}</h4>-->
-      <!--        <span> {{product.productSubtitle}}</span>-->
-      <!--      </div>-->
-      <!--      <div class="footer text-right p2 bg-danger"> more</div>-->
-      <!--    </div>-->
-      <!--    <div [ngStyle]="visibility(product)" class=" w-50 border">-->
-      <!--      <div class="p-4  text-center">-->
-      <!--        <h4>{{product.productTitle}}</h4>-->
-      <!--        <span> {{product.productSubtitle}}</span>-->
-      <!--      </div>-->
-      <!--      <div class="footer text-right p2 bg-danger"> more</div>-->
-      <!--    </div>-->
-    </ng-container>
+  <div class="row">
+    <div class="col-4 mt-3" *ngFor="let product of products">
+      <app-card
+        [cardTitle]="product.productTitle"
+        [cardSubtitle]="product.productSubtitle"
+        [qte]="product.qte"
+        [id]="product.productId"
+        (deletedCard)="onDeletedCard($event)"
+      >
+      </app-card>
+    </div>
   </div>
-  <div class="col-6">
-    <app-addition></app-addition>
-  </div>
-</div>
-
-
 
 </div>
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--  <div class="col-4 mt-3" *ngFor="let prouct of products">-->
+<!--    <div class=" w-full border">-->
+<!--      <div class="p-4  text-center">-->
+<!--        <h4>{{prouct.productTitle}}</h4>-->
+<!--        <span> {{prouct.productSubtitle}}</span>-->
+<!--        <div> {{prouct.qte}}</div>-->
+<!--      </div>-->
+<!--      <div class="footer text-right p2"  [ngClass]="prouct.qte==0? 'bg-danger':'bg-info'" >-->
+<!--        <button class="btn btn-warning" (click)="deleteCard(prouct)">Delete</button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--  </div>-->
+<!--</div>-->

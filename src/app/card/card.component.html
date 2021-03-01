@@ -1,7 +1,10 @@
-<div class=" w-50 border">
+<div class=" custom-card border">
   <div class="p-4  text-center">
-    <h4>card title</h4>
-    <span> card subtitle</span>
+    <h4>{{cardTitle}}</h4>
+    <span> {{cardSubtitle}}</span>
+    <div> {{qte}}</div>
   </div>
-  <div class="footer text-right p2 bg-danger"> action btn</div>
+  <div class="footer text-right p2"  [ngClass]="qte==0? 'bg-danger':'bg-info'" >
+    <button class="btn btn-warning" (click)="deleteCard(id)">Delete</button>
+  </div>
 </div>
