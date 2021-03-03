@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { AdditionComponent } from './addition/addition.component';
-import {FormsModule} from '@angular/forms';
-import { SubStringPipe } from './pipes/sub-string.pipe';
-import { BorderColorDirective } from './directives/border-color.directive';
+import {AppComponent} from './app.component';
+import {CardComponent} from './card/card.component';
+import {AdditionComponent} from './addition/addition.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SubStringPipe} from './pipes/sub-string.pipe';
+import {BorderColorDirective} from './directives/border-color.directive';
+import {RectiveFormComponent} from './rective-form/rective-form.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,16 @@ import { BorderColorDirective } from './directives/border-color.directive';
     CardComponent,
     AdditionComponent,
     SubStringPipe,
-    BorderColorDirective
+    BorderColorDirective,
+    RectiveFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,0 +1,31 @@
+<form [formGroup]="inscriptionForm">
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp"
+           placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted" *ngIf=" email.hasError('email')"> email not valid</small>
+    <small id="emailHelp1" class="form-text text-muted" *ngIf="email.touched && email.hasError('required')"> email required</small>
+  </div>
+  <div class="form-group">
+    <label for="userName">User name</label>
+    <input formControlName="userName" type="text" class="form-control" id="userName" placeholder="Password">
+  </div>
+  <div class="form-group ">
+    <label for="password">Password</label>
+    <div class="input-group">
+      <input formControlName="password" [type]="eyeOff?'password':'text'" class="form-control" id="password"
+             placeholder="Password">
+      <div class="input-group-append">
+        <span class="input-group-text eye-class" id="basic-addon2" (click)="onEyeClick()">
+          <i class="fa"
+             [ngClass]="!eyeOff?' fa-eye' :'fa-eye-slash'"></i></span>
+      </div>
+    </div>
+
+
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!inscriptionForm.valid" (click)="onClick()">Submit</button>
+</form>
+
+

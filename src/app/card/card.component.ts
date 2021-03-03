@@ -10,6 +10,7 @@ export class CardComponent {
   @Input('cardSubtitle') cardSubtitle = 'card subtitle';
   @Input('qte') qte = 0;
   @Input('id') id = 0;
+  @Input('image') image = '';
   @Output('deletedCard') deletedCardId = new EventEmitter();
 
   constructor() {
