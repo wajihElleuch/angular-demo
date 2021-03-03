@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ProductsServiceService} from './services/products-service.service';
+import {ProductsService} from './services/products.service';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +14,12 @@ export class AppComponent {
   bgInfo = 'bg-info';
   cardAction = 'Local setup';
 
-  products = this.productsServiceService.getProduct();
+  products = this.productsService.getProduct();
+  nbr = 1.2358;
+  word = 'azertyghfgh';
+  mouseEnter = false;
 
-  constructor(private productsServiceService: ProductsServiceService) {
+  constructor(private productsService: ProductsService) {
   }
 
   visibility(product: { productTitle: string; qte: number; productId: number; productSubtitle: string } | { productTitle: string; qte: number; productId: number; productSubtitle: string } | { productTitle: string; qte: number; productId: number; productSubtitle: string }) {
@@ -53,8 +56,18 @@ export class AppComponent {
 
   onSearch($event: Event) {
 
-    this.products = this.productsServiceService.getProduct()
+    this.products = this.productsService.getProduct()
       .filter(product => product.productTitle.toLocaleLowerCase().includes($event.target['value'].toLocaleLowerCase()));
 
+  }
+
+  onMouseEnter($event: MouseEvent) {
+    this.mouseEnter = true;
+    console.log('entred');
+  }
+
+  onMouseLeave($event: MouseEvent) {
+    // this.mouseEnter = false;
+    console.log('leaved');
   }
 }

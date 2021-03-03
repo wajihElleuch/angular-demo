@@ -31,8 +31,15 @@
       </app-card>
     </div>
   </div>
-
 </div>
+
+  <span class="position-relative" (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)">
+    {{ word|subString:5}}
+    <span class="position-absolute" *ngIf="mouseEnter" >{{word}}</span>
+  </span>
+
+
+
 <!--<div class="container">-->
 <!--  <div class="row">-->
 <!--  <div class="col-4 mt-3" *ngFor="let prouct of products">-->
