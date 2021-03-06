@@ -49,7 +49,7 @@ export class AppComponent {
   }
 
   onDeletedCard($event: any) {
-    console.log('emited id ', $event);
+
     const index = this.products.findIndex(product => product.productId === $event);
     this.products.splice(index, 1);
   }
@@ -63,11 +63,11 @@ export class AppComponent {
 
   onMouseEnter($event: MouseEvent) {
     this.mouseEnter = true;
-    console.log('entred');
+
   }
 
   onMouseLeave($event: MouseEvent) {
     // this.mouseEnter = false;
-    console.log('leaved');
+
   }
 }

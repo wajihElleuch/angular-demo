@@ -17,7 +17,6 @@ export class CardComponent {
   }
 
   deleteCard(id) {
-    console.log(id);
     this.deletedCardId.emit(id);
   }
 }

@@ -5,7 +5,7 @@
     <img [src]="image" alt="" width="100px">
     <div> {{qte}}</div>
   </div>
-  <div class="footer text-right p2"  >
-    <button class="btn btn-warning" (click)="deleteCard(id)">Delete</button>
+  <div class="footer "  >
+    <app-counter [qte]="qte"></app-counter>
   </div>
 </div>

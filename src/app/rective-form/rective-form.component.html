@@ -3,12 +3,19 @@
     <label for="email">Email address</label>
     <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp"
            placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted" *ngIf=" email.hasError('email')"> email not valid</small>
+    <small id="emailHelp" class="form-text text-muted" *ngIf="email.hasError('email')"> email not valid</small>
     <small id="emailHelp1" class="form-text text-muted" *ngIf="email.touched && email.hasError('required')"> email required</small>
   </div>
   <div class="form-group">
     <label for="userName">User name</label>
-    <input formControlName="userName" type="text" class="form-control" id="userName" placeholder="Password">
+    <input formControlName="userName" type="text" class="form-control" id="userName" placeholder="User name">
+    <small id="userName1" class="form-text text-muted" *ngIf="userName.dirty && userName.hasError('minlength')"> min lenght required
+      {{userName.errors['minlength']['requiredLength']}} </small>
+  </div>
+  <div class="form-group">
+    <label for="age">User age</label>
+    <input formControlName="age" type="text" class="form-control" id="age" placeholder="Password">
+    <span *ngIf="age.dirty && age.hasError('ageValidator')">{{age.errors|json}}</span>
   </div>
   <div class="form-group ">
     <label for="password">Password</label>

@@ -7,7 +7,6 @@ export class BorderColorDirective {
   clickNumber = 0;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-    console.log(this.elementRef.nativeElement)
     this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'blue');
   }
 

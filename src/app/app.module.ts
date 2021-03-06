@@ -8,6 +8,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SubStringPipe} from './pipes/sub-string.pipe';
 import {BorderColorDirective} from './directives/border-color.directive';
 import {RectiveFormComponent} from './rective-form/rective-form.component';
+import { CounterComponent } from './counter/counter.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import {RectiveFormComponent} from './rective-form/rective-form.component';
     SubStringPipe,
     BorderColorDirective,
     RectiveFormComponent,
+    CounterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
