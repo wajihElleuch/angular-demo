@@ -14,49 +14,41 @@
 <!--    </ng-container>-->
 <!--  </ng-container>-->
 <!--</div>-->
-<app-navbar></app-navbar>
-<div>
-  <input type="text" placeholder="serach ..." (input)="onSearch($event)">
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-4 mt-3" *ngFor="let product of products">
-      <app-card
-        [cardTitle]="product.productTitle"
-        [cardSubtitle]="product.productSubtitle"
-        [qte]="product.qte"
-        [id]="product.productId"
-        [image]="product.img"
-        (deletedCard)="onDeletedCard($event)"
-      >
-      </app-card>
-    </div>
-  </div>
-</div>
-
-  <span class="position-relative" (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)">
-    {{ word|subString:5}}
-    <span class="position-absolute" *ngIf="mouseEnter" >{{word}}</span>
-  </span>
-
-
-
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--  <div class="col-4 mt-3" *ngFor="let prouct of products">-->
-<!--    <div class=" w-full border">-->
-<!--      <div class="p-4  text-center">-->
-<!--        <h4>{{prouct.productTitle}}</h4>-->
-<!--        <span> {{prouct.productSubtitle}}</span>-->
-<!--        <div> {{prouct.qte}}</div>-->
-<!--      </div>-->
-<!--      <div class="footer text-right p2"  [ngClass]="prouct.qte==0? 'bg-danger':'bg-info'" >-->
-<!--        <button class="btn btn-warning" (click)="deleteCard(prouct)">Delete</button>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--  </div>-->
-<!--  </div>-->
+<!--<app-panel>-->
+<!--  <h5 name>wajih elleuch</h5>-->
+<!--  <h5 exp>2 years of experience</h5>-->
+<!--</app-panel>-->
+<!--<app-navbar></app-navbar>-->
+<!--<div>-->
+<!--  <input type="text" placeholder="serach ..." (input)="onSearch($event)">-->
 <!--</div>-->
-<app-rective-form></app-rective-form>
+
+
+
+<!--<span class="position-relative" (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)">-->
+<!--    {{ word|subString:5}}-->
+<!--  <span class="position-absolute" *ngIf="mouseEnter">{{word}}</span>-->
+<!--  </span>-->
+
+
+<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="col-4 mt-3" *ngFor="let prouct of products">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class=" w-full border">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="p-4  text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h4>{{prouct.productTitle}}</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span> {{prouct.productSubtitle}}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div> {{prouct.qte}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="footer text-right p2"  [ngClass]="prouct.qte==0? 'bg-danger':'bg-info'" >&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="btn btn-warning" (click)="deleteCard(prouct)">Delete</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<app-rective-form></app-rective-form>-->
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>

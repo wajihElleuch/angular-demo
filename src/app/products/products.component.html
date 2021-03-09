@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 mt-3" *ngFor="let product of products">
+      <app-card
+        (click)="onClick(product.productId)"
+        [cardTitle]="product.productTitle"
+        [cardSubtitle]="product.productSubtitle"
+        [qte]="product.qte"
+        [id]="product.productId"
+        [image]="product.img"
+        (deletedCard)="onDeletedCard($event)"
+      >
+      </app-card>
+    </div>
+  </div>
+</div>
